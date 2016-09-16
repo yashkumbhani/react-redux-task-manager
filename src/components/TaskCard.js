@@ -6,7 +6,10 @@ class TaskCard extends Component {
     const { description , members , name } = this.props;
 
     return (
-      <div className = "TaskCard">
+      <div className = "task-card">
+        <div>{description} </div>
+        <div>{members} </div>
+        <div>{name} </div>
       </div>
     );
   }
