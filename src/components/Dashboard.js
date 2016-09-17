@@ -6,22 +6,11 @@ class Dashboard extends Component {
     return (
       <div className = "dashboard">
         <div className = "container">
-        {this.props.tasks.map(function(element,key){
-            if(key%3==0){
+        {this.props.route.tasks.map(function(element,key){
                 return (
-                  <div className = "row">
                     <TaskCard  {...element} key={key} />
-                  </div>
                );
-            }
-            else {
-              return   (<TaskCard  {...element} key={key} />);
-            }
-
         })}
-          <div className = "container">
-
-          </div>
         </div>
       </div>
     );
@@ -29,7 +18,7 @@ class Dashboard extends Component {
 }
 
 Dashboard.propTypes = {
-  tasks  : PropTypes.array
+  route  : PropTypes.object
 };
 
 export default Dashboard;
