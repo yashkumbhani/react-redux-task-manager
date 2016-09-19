@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import TaskCard from './TaskCard';
+import AddCard from './AddCard';
 
 class Dashboard extends Component {
   render(){
@@ -11,6 +12,7 @@ class Dashboard extends Component {
                     <TaskCard  {...element} key={key} />
                );
         })}
+        <AddCard />
         </div>
       </div>
     );
