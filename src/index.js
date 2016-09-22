@@ -5,6 +5,8 @@ import { Router ,browserHistory} from 'react-router';
 import { render } from 'react-dom';
 // Import css
 import './public/css/style.css';
+import 'react-select/dist/react-select.css';
+
 
 // Import Components
 import router from './router';

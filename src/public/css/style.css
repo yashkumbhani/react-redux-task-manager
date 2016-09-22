@@ -38,7 +38,6 @@
     color: #cbcbd0;
     padding: 5px;
     height: 55px;
-    overflow-y: scroll;
 }
 
 .add-task-card:hover{
@@ -54,4 +53,17 @@
   position: absolute;
   left : 32%;
   top: 25%;
+}
+
+.new-task{
+  visibility: hidden
+}
+
+.pop-up-card{
+  color: grey;
+  height: 130px;
+  padding: 20px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(218,218,227,1);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(218,218,227,1);
+  box-shadow: 0px 0px 5px 0px rgba(218,218,227,1);
 }
