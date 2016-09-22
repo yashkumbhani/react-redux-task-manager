@@ -1,57 +1,73 @@
 import React, { Component, PropTypes } from 'react';
 import Select from 'react-select';
-import MultiSelectField from './MultiSelectField';
-//https://github.com/JedWatson/react-select/blob/master/examples/src/components/Creatable.js
 class PopUpCard extends Component {
 
   constructor (){
     super();
-    this.logChange = this.logChange.bind(this);
+    this.handleOnChange = this.handleOnChange.bind(this);
+    this.state = {};
+    this.state = {
+      multi: true,
+      multiValue: [],
+      options: [
+        { value: 'R', label: 'Red' },
+        { value: 'G', label: 'Green' },
+        { value: 'B', label: 'Blue' }
+      ],
+      value: undefined
+    };
   }
 
-  logChange(val) {
-    console.log("Selected: " + val);
+handleOnChange (value) {
+  console.log(value['0'], '-----------value--------')
+  const { multi } = this.state;
+  if (multi) {
+    this.setState({ multiValue: value });
+  } else {
+    this.setState({ value });
   }
+}
 
   render(){
     let divStyle = {
       visibility : this.props.visibility
     };
-
-    let options = [
-      { value: 'one', label: 'One' },
-      { value: 'two', label: 'Two' }
-    ];
+    const { multi, multiValue, options, value } = this.state;
 
     return (
+
       <div className = "pop-up-card col-md-4" style = {divStyle} >
-        <div>{this.props.title}</div>
-        <div>
+        <div className="pop-up-card-field">{this.props.title}</div>
+        <div className="pop-up-card-field">
           <div>{this.props.subtitle1}</div>
           <input type="text" className="form-control" aria-label="..." />
         </div>
-        <div>
+
+        <div className="pop-up-card-field">
           <div>{this.props.subtitle2}</div>
           <input type="text" className="form-control" aria-label="..." />
         </div>
-        <div>
-        <div>{this.props.subtitle3}</div>
-          <Select
-              name="form-field-name"
-              options={options}
-              onChange={this.logChange}
-              multi={true}
-          />
-        </div>
-        <div><MultiSelectField label="asdasd"/></div>
 
+        <div className="pop-up-card-field">
+          <div> {this.props.subtitle3}</div>
+      				<Select.Creatable
+              multi={multi}
+              options={options}
+      				onChange={this.handleOnChange}
+              value={multi ? multiValue : value}
+              />
+        </div>
+        <div className="row">
+        <div className="pop-up-card-button col-md-2">Create</div>
+        <div className="pop-up-card-button col-md-2">Cancel</div>
+        </div>
       </div>
     );
   }
 }
 
 PopUpCard.propTypes = {
-  title : PropTypes.string,
+  title:PropTypes.string,
   subtitle1:PropTypes.string,
   subtitle2:PropTypes.string,
   subtitle3:PropTypes.string,

@@ -61,9 +61,25 @@
 
 .pop-up-card{
   color: grey;
-  height: 130px;
+  height: 350px;
   padding: 20px;
   -webkit-box-shadow: 0px 0px 5px 0px rgba(218,218,227,1);
   -moz-box-shadow: 0px 0px 5px 0px rgba(218,218,227,1);
   box-shadow: 0px 0px 5px 0px rgba(218,218,227,1);
+}
+
+.pop-up-card-field {
+  padding: 10px;
+}
+
+.pop-up-card-button{
+  font-weight: bold;
+  align-self: auto;
+  margin :10px;
+  border: 1.5px solid #a1a1a1;
+  padding: 1.5px 53px 6px 12px;
+  width: 50px;
+  border-radius: 25px;
+  cursor: pointer;
+  color: #a1a1a1
 }
