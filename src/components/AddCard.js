@@ -8,12 +8,17 @@ class AddCard extends Component {
     super();
     console.log(this);
     this.onClick = this.onClick.bind(this);
+    this.popCardVisiblity = this.popCardVisiblity.bind(this);
     this.state = {};
     this.state.popup = 'hidden';
   }
 
-  onClick(){
-    console.log('---------------',this);
+  popCardVisiblity (value){
+    this.setState({popup:value});
+  }
+
+  onClick(e){
+    console.log(e.currentTarget.getBoundingClientRect());
     this.setState({popup:'visible'});
   }
 
@@ -27,7 +32,7 @@ class AddCard extends Component {
         </div>
       </div>
       <PopUpCard visibility = {this.state.popup} title={'Create Project'} subtitle1={'Title'}
-        subtitle2={'Description'}  subtitle3={'Members'}  />
+        subtitle2={'Description'}  subtitle3={'Members'} {...this.props} popCardVisiblity={this.popCardVisiblity} />
     </div>
     );
   }

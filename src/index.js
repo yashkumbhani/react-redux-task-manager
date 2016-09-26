@@ -12,9 +12,8 @@ import 'react-select/dist/react-select.css';
 import router from './router';
 import { Provider } from 'react-redux';
 
-import configureStore from './store/configureStore';
+import store from './store/configureStore';
 
-const store = configureStore();
 const app = (
    <Provider store={store}>
       {router}

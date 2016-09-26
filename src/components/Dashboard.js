@@ -7,12 +7,12 @@ class Dashboard extends Component {
     return (
       <div className = "dashboard">
         <div className = "container">
-        {this.props.route.tasks.map(function(element,key){
+        {this.props.tasks.map(function(element,key){
                 return (
-                    <TaskCard  {...element} key={key} />
+                    <TaskCard {...this.props} {...element} key={key} />
                );
-        })}
-        <AddCard />
+        }.bind(this))}
+        <AddCard {...this.props}/>
         </div>
       </div>
     );
@@ -20,7 +20,7 @@ class Dashboard extends Component {
 }
 
 Dashboard.propTypes = {
-  route  : PropTypes.object
+  tasks  : PropTypes.array
 };
 
 export default Dashboard;

@@ -1,9 +1,9 @@
 import React, {  PropTypes } from 'react';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Header from '../components/Header';
 import Dashboard from '../components/Dashboard';
-
-//        {React.cloneElement(this.props.children, this.props)}
+import * as actionCreators from '../actions/tasks';
 
 class App extends React.Component {
   render() {
@@ -22,8 +22,12 @@ class App extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    messages: state.messages
+    tasks: state.tasks
   };
 }
 
-export default connect(mapStateToProps)(App);
+function mapDispachToProps(dispatch) {
+  return bindActionCreators(actionCreators, dispatch);
+}
+
+export default connect(mapStateToProps , mapDispachToProps)(App);
