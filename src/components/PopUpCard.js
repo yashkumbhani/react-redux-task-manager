@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import Select from 'react-select';
+
 class PopUpCard extends Component {
 
   constructor (){
@@ -13,9 +14,9 @@ class PopUpCard extends Component {
       multi: true,
       multiValue: [],
       options: [
-        { value: 'R', label: 'Red' },
-        { value: 'G', label: 'Green' },
-        { value: 'B', label: 'Blue' }
+        { value: 'R', label: 'Yash' },
+        { value: 'G', label: 'Prashant' },
+        { value: 'B', label: 'Namrota' }
       ],
       value: undefined
     };
@@ -34,14 +35,14 @@ handleOnChange (value) {
     };
     this.setState({multiValue: []});
     this.props.addTask(task);
-    this.props.popCardVisiblity('hidden');
+    this.props.popCardVisiblity(false);
     this.refs.title.value ='';
     this.refs.description.value = '';
   }
 
   onCancel(){
     this.setState({title:'',description:'',multiValue: []});
-    this.props.popCardVisiblity('hidden');
+    this.props.popCardVisiblity(false);
     this.refs.title.value ='';
     this.refs.description.value = '';
   }
@@ -54,7 +55,7 @@ handleOnChange (value) {
 
     return (
 
-      <div className = "pop-up-card col-md-4" style = {divStyle} >
+      <div className = "pop-up-card col-md-4"  >
         <div className="pop-up-card-field">{this.props.title}</div>
         <div className="pop-up-card-field">
           <div>{this.props.subtitle1}</div>

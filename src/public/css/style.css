@@ -9,6 +9,7 @@
 }
 
 .task-card {
+    width: 250px;
     color: grey;
     height: 130px;
     padding: 20px;
@@ -55,11 +56,8 @@
   top: 25%;
 }
 
-.new-task{
-  visibility: hidden
-}
-
 .pop-up-card{
+  width: 350px;
   color: grey;
   height: 350px;
   padding: 20px;
@@ -74,7 +72,6 @@
 
 .pop-up-card-button{
   font-weight: bold;
-  align-self: auto;
   margin :10px;
   border: 1.5px solid #a1a1a1;
   padding: 1.5px 53px 6px 12px;
@@ -82,4 +79,21 @@
   border-radius: 25px;
   cursor: pointer;
   color: #a1a1a1
+}
+
+.pop-up-modal{
+
+position :  absolute ;
+  top                        :  40px  ;
+  left                       :  40px  ;
+  right                      :  40px  ;
+  bottom                     :  40px  ;
+  border                     :  1px solid #ccc  ;
+  background                 :  #fff  ;
+  overflow                   :  auto  ;
+  WebkitOverflowScrolling    :  touch  ;
+  borderRadius               :  4px  ;
+  outline                    :  none  ;
+  padding                    :  20px ;
+
 }
