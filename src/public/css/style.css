@@ -97,3 +97,17 @@ position :  absolute ;
   padding                    :  20px ;
 
 }
+
+.name-card-name{
+  margin-top: 60px;
+  width: 280px;
+  height: 60px;
+  font-weight: bold;
+  text-align: center;
+  border: 1px;
+  padding-top: 22px;
+  -webkit-box-shadow: 4px 0px 11px 1px rgba(219,215,219,0.74);
+  -moz-box-shadow: 4px 0px 11px 1px rgba(219,215,219,0.74);
+  box-shadow: 4px 0px 11px 1px rgba(219,215,219,0.74);
+  cursor: pointer;
+}
